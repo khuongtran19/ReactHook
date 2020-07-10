@@ -18,8 +18,21 @@ For learning purpose.
 - useDebugValue
 
 ### useState
-| Class Component | Function Component |
-| --- | --- |
-| state = {activeIndex: 0 } | useState(0) |
-| this.state.activeIndex | activeIndex |
-| this.setState({ activeIndex: 10 }) | setActiveIndex(10) |
+| --- | Class Component | Function Component |
+| --- | :---: | :---: |
+| Initialization | state = {activeIndex: 0 } | useState(0) |
+| Reference | this.state.activeIndex | activeIndex |
+| Updates | this.setState({ activeIndex: 10 }) | setActiveIndex(10) |
+
+### useEffect
+Allow function components to use something like lifecycle methods
+We configure the hook to run some code automatically in one of three scenarios
+- When the component is rendered for the first time only
+- When the component is rendered for the first time and whenever it rerenders
+- When the component is rendered for the first time and whenever it rerenders and some piece of data has changed
+
+#### useEffect second arugment
+| [] | nothing | [data] |
+| :---: | :---: | :---: |
+| Run at initial render | Run at initial render | Run at inital render |
+|    | Run after the every rerender | Run after every rerender if data has changed since last render |
