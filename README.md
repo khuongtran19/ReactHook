@@ -18,7 +18,7 @@ For learning purpose.
 - useDebugValue
 
 ### useState
-| --- | Class Component | Function Component |
+|  | Class Component | Function Component |
 | --- | :---: | :---: |
 | Initialization | state = {activeIndex: 0 } | useState(0) |
 | Reference | this.state.activeIndex | activeIndex |
@@ -31,7 +31,12 @@ We configure the hook to run some code automatically in one of three scenarios
 - When the component is rendered for the first time and whenever it rerenders
 - When the component is rendered for the first time and whenever it rerenders and some piece of data has changed
 
-#### useEffect second arugment
+#### how to use useEffect
+Call function
+useEffect(**first argument usually function**, **second argument**)
+
+#### useEffect second argument
+- Second argument will decide how function will render
 | [] | nothing | [data] |
 | :---: | :---: | :---: |
 | Run at initial render | Run at initial render | Run at inital render |
