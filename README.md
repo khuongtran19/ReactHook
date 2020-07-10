@@ -16,3 +16,10 @@ For learning purpose.
 - useImperativeHandle
 - useLayoutEffect
 - useDebugValue
+
+### useState
+| Class Component | Function Component |
+| --- | --- |
+| state = {activeIndex: 0 } | useState(0) |
+| this.state.activeIndex | activeIndex |
+| this.setState({ activeIndex: 10 }) | setActiveIndex(10) |
