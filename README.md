@@ -1,3 +1,11 @@
+For learning purpose.
+
+# React Hook
+- useState: Function that lets you use state in a functional component
+- useEffect: Function that lets you use something like lifecycle methods in a functional component
+- useRef: Function that lets you create a 'ref' in a function component
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
