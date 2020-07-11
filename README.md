@@ -32,11 +32,11 @@ We configure the hook to run some code automatically in one of three scenarios
 - When the component is rendered for the first time and whenever it rerenders and some piece of data has changed
 
 #### how to use useEffect
-Call function
+Call function\
 useEffect(**first argument usually function**, **second argument**)
 
 #### useEffect second argument
-- Second argument will decide how function will render
+- Second argument will decide how function will render\
 | [] | nothing | [data] |
 | :---: | :---: | :---: |
 | Run at initial render | Run at initial render | Run at inital render |
