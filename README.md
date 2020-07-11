@@ -36,7 +36,6 @@ Call function\
 useEffect(**first argument usually function**, **second argument**)
 
 #### useEffect second argument
-- Second argument will decide how function will render\
 | [] | nothing | [data] |
 | :---: | :---: | :---: |
 | Run at initial render | Run at initial render | Run at inital render |
