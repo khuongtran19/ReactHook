@@ -47,11 +47,19 @@ const Search = () => {
             <div
                 className='item'
                 dkey={result.pageid}>
+                <div className='right floated content'>
+                    <a
+                        className='ui button'
+                        href={`https://en.wikipedia.org?curid=${result.pageid}`}
+                    >
+                        Go
+                    </a>
+                </div>
                 <div className='content'>
                     <div className='header'>
                         {result.title}
                     </div>
-                    {result.snippet}
+                    <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
                 </div>
             </div>
         )
