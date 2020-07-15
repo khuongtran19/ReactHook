@@ -37,13 +37,13 @@ We configure the hook to run some code automatically in one of three scenarios
 **Example**:\
 | :---: | :---: |
 | Initial Component | -> Function provided to useEffect called |
-|  | -> Return a cleanup function |
+|     | -> Return a cleanup function |
 | Rerender | -> Invoke the cleanup function |
-|  | -> Function provided to useEffect called again |
-|  | -> Return a cleanup function |
+|     | -> Function provided to useEffect called again |
+|     | -> Return a cleanup function |
 | Rerender | -> Invoke the cleanup function |
-|  | -> Function provided to useEffect called again |
-|  | -> Return a cleanup function |
+|     | -> Function provided to useEffect called again |
+|     | -> Return a cleanup function |
 
 #### how to use useEffect
 Call function\
