@@ -18,8 +18,18 @@ const Search = () => {
             })
             setResult(data.query.search)
         }
-        if (term) {
-            search()
+
+        if (term && !results.length) {
+            search();
+        } else {
+            const timeOutId = setTimeout(() => {
+                if (term) {
+                    search()
+                }
+            }, 1000)
+            return () => {
+                clearTimeout(timeOutId)
+            }
         }
     }, [term])
 
