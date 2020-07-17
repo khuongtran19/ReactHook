@@ -56,4 +56,4 @@ useEffect(**first argument usually function**, **second argument**)
 | :---: | :---: | :---: |
 | Run at initial render | Run at initial render | Run at inital render |
 |    | Run after the every rerender | Run after every rerender if data has changed since last render |
-| run one time | not run if rerender | run every time data change |
+| If you want to run an effect and clean it up only once. This tells React that your effect doesn't depend on any values from props or state, so it never need to re-run | If you not passing anything the Effect will only run only once and never be re-rendered | Run every time data change |
