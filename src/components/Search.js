@@ -2,8 +2,21 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Search = () => {
-    const [term, setTerm] = useState('')
+    const [term, setTerm] = useState('programming')
+    const [debouncedTerm, setDebouncedTerm] = useState(term)
     const [results, setResult] = useState([])
+
+    // Reason we use 2 useEffect is because it minimize the error in the future when there are multiple term
+    // when use 1 useEffect with 2 term at same time the useEffect function will run twice when each term change which may create multiple axios call.
+    // to minimize the call we can use 2 different useEffect.
+    useEffect(() => { // <- this run first anytime term change
+        const timerId = setTimeout(() => {
+            setDebouncedTerm(term)
+        }, 1000) // queue up the change after 1 milisecond time out
+        return () => {
+            clearTimeout(timerId) // if the user change term the timeout will reset
+        }
+    }, [term]) // <- this first term
 
     useEffect(() => {
         const search = async () => {
@@ -13,25 +26,13 @@ const Search = () => {
                     list: 'search',
                     origin: '*',
                     format: 'json',
-                    srsearch: term
+                    srsearch: debouncedTerm
                 }
             })
             setResult(data.query.search)
         }
-
-        if (term && !results.length) {
-            search();
-        } else {
-            const timeOutId = setTimeout(() => {
-                if (term) {
-                    search()
-                }
-            }, 1000)
-            return () => {
-                clearTimeout(timeOutId)
-            }
-        }
-    }, [term])
+        search();
+    }, [debouncedTerm]) // <- this second term which will store after 1 milisecond
 
     // Alt way to use with .then
     // useEffect(() => {
@@ -56,7 +57,7 @@ const Search = () => {
         return (
             <div
                 className='item'
-                dkey={result.pageid}>
+                key={result.pageid}>
                 <div className='right floated content'>
                     <a
                         className='ui button'
