@@ -5,6 +5,7 @@ import Dropdown from './components/Dropdown';
 import Translate from './components/Translate'
 import Route from './components/Route'
 import Header from './components/Header'
+import Youtube from './components/Youtube'
 
 const items = [
     {
@@ -56,6 +57,9 @@ export default () => {
             </Route>
             <Route path='/translate'>
                 <Translate />
+            </Route>
+            <Route path='/youtube'>
+                <Youtube />
             </Route>
         </div>
     )
