@@ -35,17 +35,17 @@ We configure the hook to run some code automatically in one of three scenarios
 - In React Hook, useEffect is combination of **componentDidMount**, **componentDidUpdate**, and **componentWillUnmount**.
 - When useEffect the function will call when render. Use return for clean up as how **componentDidUpdate** or **componentWillUnmount** done. React performs the cleanup when the component unmounts. However, effect run for every render and not just once.\
 **Example**\
-Initial Component Render
---- Function provided to useEffect called
---- Return a cleanup function
-Rerender
---- Invoke the cleanup function
---- Function provided to useEffect called again
---- Return a cleanup function
-Rerender
---- Invoke the cleanup function
---- Function provided to useEffect called again
---- Return a cleanup function
+Initial Component Render\
+--- Function provided to useEffect called\
+--- Return a cleanup function\
+Rerender\
+--- Invoke the cleanup function\
+--- Function provided to useEffect called again\
+--- Return a cleanup function\
+Rerender\
+--- Invoke the cleanup function\
+--- Function provided to useEffect called again\
+--- Return a cleanup function\
 
 #### how to use useEffect
 Call function\
@@ -56,4 +56,4 @@ useEffect(**first argument usually function**, **second argument**)
 | :---: | :---: | :---: |
 | Run at initial render | Run at initial render | Run at inital render |
 |    | Run after the every rerender | Run after every rerender if data has changed since last render |
-| This will run one time | This will not run if rerender | This will run every time data change |
+| run one time | not run if rerender | run every time data change |
